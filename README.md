@@ -1,7 +1,7 @@
 # Tomatracker
 
 
-### _A time and task management app aimed at programmers and promotes healthy working habits._
+### _A time and task management app aimed at programmers that promotes healthy working habits._
 
 ## Core functionality
 
