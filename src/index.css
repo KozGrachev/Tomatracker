@@ -1,0 +1,67 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 1fr;
+  height: 100vh;
+  background-color: rgb(227, 243, 221);
+}
+
+svg circle{
+  /* border: 3px solid red; */
+  stroke: rgba(116, 101, 101, 0.281);
+  stroke-width: 5px;
+  fill: transparent;
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: 500px;
+  animation: dash-animation 30s ease forwards;
+}
+
+
+.circle{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  /* border: 3px solid green; */
+}
+
+#timerContainer{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 300px;
+  height: 300px;
+
+  background-color: rgba(255, 255, 255, 0.151);
+
+
+}
+
+#timeDisplay {
+  font-size: 50px;
+}
+
+#work-timeline{
+  position: relative;
+  /* width: 90%;
+  height: 90%; */
+  /* background: red; */
+  border: 3px dashed rgba(255, 255, 255, 0.541);
+  /* dash */
+}
+
+#rest-timeline{
+  position: relative;
+}
+
+@keyframes dash-animation{
+  to{
+    stroke-dashoffset: 200;
+  }
+}
