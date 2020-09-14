@@ -2,6 +2,7 @@
 
 
 ### _A time and task management app aimed at programmers that promotes healthy working habits._
+At a simple level, the program should help the programmer know what needs to be done next, and provide a pomodoro timer, to help promote healthy study habits. The functionality of this app can be extended to incorporate a more holistic approach to study, taking into account Research on learning theory, exercise routines, and motivation.
 
 ## Core functionality
 
