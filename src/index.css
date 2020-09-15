@@ -65,3 +65,11 @@ svg circle{
     stroke-dashoffset: 200;
   }
 }
+
+#playButton{
+  color: green;
+}
+
+#pauseButton{
+  color: red;
+}
