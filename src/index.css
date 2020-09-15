@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.582);
+  font-family: 'Montserrat', sans-serif;
 }
 
 body{
@@ -30,21 +32,24 @@ svg circle{
   /* border: 3px solid green; */
 }
 
-#timerContainer{
+.timerContainer{
   position: absolute;
   left:50%;
   top: 50%;
   transform: translate(-50%,-50%);
   width: 300px;
   height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  background-color: rgba(255, 255, 255, 0.151);
+  background-color: rgba(255, 255, 255, 0.226);
 
 
 }
 
 #timeDisplay {
-  font-size: 50px;
+  font-size: 70px;
 }
 
 #work-timeline{
@@ -64,4 +69,40 @@ svg circle{
   to{
     stroke-dashoffset: 200;
   }
+}
+
+#buttons{
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+}
+
+#playButton{
+  color: green;
+}
+
+#pauseButton{
+  color: red;
+}
+
+button{
+  border-radius: 10px;
+  font-size: medium;
+  padding: 15px;
+  margin: 5%;
+  border: none;
+  background-color: rgba(202, 202, 202, 0.445);
+  color: rgba(255, 255, 255, 0.753);
+}
+
+button:focus{
+  outline: none;
+  /* background: rgba(233, 233, 233, 0.719) */
+  box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.733);
+}
+
+
+button:active{
+  background: rgba(233, 233, 233, 0.719)
 }
