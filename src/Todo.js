@@ -1,5 +1,4 @@
 import React from 'react'
-import TodoList from './TodoList'
 
 export default function Todo({ todo, toggleTodo }) {
   function handleTodoClick() {

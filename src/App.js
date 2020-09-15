@@ -4,16 +4,16 @@ import "./App.css";
 import TaskHandler from "./TaskHandler";
 
 function App() {
-
-
   return (
-    <>
-      <div className="App">
-        <Timer />
+    <div className="flex-wrapper">
+      <div className="flex-container">
+        <TaskHandler />
       </div>
 
-      <TaskHandler />
-    </>
+      <div className="App flex-container">
+        <Timer />
+      </div>
+    </div>
   );
 }
 
