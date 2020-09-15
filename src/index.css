@@ -70,8 +70,6 @@ svg circle{
     stroke-dashoffset: 200;
   }
 }
-<<<<<<< HEAD
-=======
 
 #buttons{
   position: relative;
@@ -108,4 +106,3 @@ button:focus{
 button:active{
   background: rgba(233, 233, 233, 0.719)
 }
->>>>>>> b2cdb554b11dc38d6ec40231d1e99cc1cee051fd
