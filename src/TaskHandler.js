@@ -3,7 +3,7 @@ useRef instead allows us to access the input box
 uuid will help provide a unique id to todos*/
 
 import React, { useState, useRef, useEffect } from "react";
-import TodoList from "./TodoList";
+import TaskList from "./TaskList";
 import { v4 as uuidv4 } from "uuid";
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
@@ -58,7 +58,7 @@ export default function TaskHandler() {
 
   return (
       <>
-      <TodoList todos={todos} toggleTodo ={toggleTodo} />
+      <TaskList todos={todos} toggleTodo ={toggleTodo} />
       <input className="input-textbox" ref={todoNameRef} type="text" />
       <button className="button" onClick={handleAddTodo}>Add Task</button>
       <button onClick={handleClearTodos}>Clear Done</button>
