@@ -17,7 +17,7 @@ const Input = (props) => {
             />
             <button
                 onClick={() => {
-                    // props.setWorkTime(userInput);
+                    props.setWorkTime(userInput);
                     setUserInput("");
                 }}
             >Submit</button>
