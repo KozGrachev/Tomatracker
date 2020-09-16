@@ -3,10 +3,10 @@ import Habit from './Habit'
 
 
 
-export default function HabitList({ todos, toggleTodo }) {
+export default function HabitList({ habits, toggleHabit }) {
   return (
-    todos.map(todo => {
-      return <Habit key={todo.id} toggleTodo={toggleTodo} todo={todo} />
+    habits.map(habit => {
+      return <Habit key={habit.id} toggleHabit={toggleHabit} habit={habit} />
     })
   )
 }

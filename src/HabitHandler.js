@@ -1,6 +1,6 @@
 /*useState is needed to save the current list of things that need doing
 useRef instead allows us to access the input box
-uuid will help provide a unique id to todos*/
+uuid will help provide a unique id to habits*/
 
 import React, { useState, useRef, useEffect } from "react";
 import HabitList from "./HabitList";
@@ -9,65 +9,65 @@ import { v4 as uuidv4 } from "uuid";
 const LOCAL_STORAGE_KEY = "tomatrackerApp.habits";
 
 export default function HabitHandler() {
-  const [todos, setTodos] = useState([]); //[{id: 1, name:'todo1', complete: false}]
-  const todoNameRef = useRef(); //
+  const [habits, setHabits] = useState([]); //[{id: 1, name:'habit1', complete: false}]
+  const habitNameRef = useRef(); //
 
   /*
   This checks if something's stored and if it is, it loads it
   Note: JSON.parse converts string to an array
   */
   useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storedTodos) setTodos(storedTodos);
+    const storedHabits = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedHabits) setHabits(storedHabits);
   }, []);
   /*
   Anytime anything in the array changes, it will call useeffect function.
   Note:JSON.stringify changes array into a string for local storage
   */
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(habits));
+  }, [habits]);
 
-  function handleAddTodo(e) {
-    console.log("todoNameRef:", todoNameRef);
-    const name = todoNameRef.current.value;
+  function handleAddhabit(e) {
+    console.log("habitNameRef:", habitNameRef);
+    const name = habitNameRef.current.value;
     if (name === "") return;
 
-    setTodos((prevTodos) => {
-      //will give us previous todos, and add one
-      return [...prevTodos, { id: uuidv4(), name: name, complete: false }];
+    setHabits((prevHabits) => {
+      //will give us previous habits, and add one
+      return [...prevHabits, { id: uuidv4(), name: name, complete: false }];
     });
 
-    todoNameRef.current.value = null; //clears box
+    habitNameRef.current.value = null; //clears box
   }
 
-  function toggleTodo(id) {
-    const newTodos = [...todos];
+  function toggleHabit(id) {
+    const newHabits = [...habits];
     /*Find the id*/
-    const todo = newTodos.find((todo) => todo.id === id);
-    /*toggle that todo to it's opposite*/
-    todo.complete = !todo.complete;
-    setTodos(newTodos);
+    const habit = newHabits.find((habit) => habit.id === id);
+    /*toggle that habit to it's opposite*/
+    habit.complete = !habit.complete;
+    setHabits(newHabits);
   }
 
   function handleDeleteSelectedHabits() {
-    const newTodos = todos.filter((todo) => !todo.complete);
-    setTodos(newTodos);
+    const newHabits = habits.filter((habit) => !habit.complete);
+    setHabits(newHabits);
   }
 
   function handleClearHabits() {
-    const newTodos = todos.map((todo) => {
-      todo.complete = false;
-      return todo;
+    const newHabits = habits.map((habit) => {
+      habit.complete = false;
+      return habit;
     });
-    setTodos(newTodos);
+    setHabits(newHabits);
   }
 
   return (
     <>
-      <HabitList todos={todos} toggleTodo={toggleTodo} />
-      <input className="input-textbox-lists" ref={todoNameRef} type="text" />
-      <button className="button" onClick={handleAddTodo}>Add Habit</button>
+      <HabitList habits={habits} toggleHabit={toggleHabit} />
+      <input className="input-textbox-lists" ref={habitNameRef} type="text" />
+      <button className="button" onClick={handleAddhabit}>Add Habit</button>
       <button className="button" onClick={handleClearHabits}>Reset Habits</button>
       <button className="button" onClick={handleDeleteSelectedHabits}>Delete Habits</button>
     </>
