@@ -29,15 +29,6 @@ export default function TaskHandler() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  function toggleTodo(id) {
-    const newTodos = [...todos]
-    /*Find the id*/
-    const todo = newTodos.find(todo => todo.id === id)
-    /*toggle that todo*/
-    todo.complete = !todo.complete
-    setTodos(newTodos)
-  }
-
   function handleAddTodo(e) {
     console.log("todoNameRef:", todoNameRef);
     const name = todoNameRef.current.value;
@@ -51,18 +42,26 @@ export default function TaskHandler() {
     todoNameRef.current.value = null; //clears box
   }
 
+  function toggleTodo(id) {
+    const newTodos = [...todos]
+    /*Find the id*/
+    const todo = newTodos.find(todo => todo.id === id)
+    /*toggle that todo to it's opposite*/
+    todo.complete = !todo.complete
+    setTodos(newTodos)
+  }
+
   function handleClearTodos() {
     const newTodos = todos.filter(todo => !todo.complete)
     setTodos(newTodos);
-
   }
 
   return (
       <>
       <TodoList todos={todos} toggleTodo ={toggleTodo} />
-      <input className="input" ref={todoNameRef} type="text" />
+      <input className="input-textbox" ref={todoNameRef} type="text" />
       <button className="button" onClick={handleAddTodo}>Add Task</button>
-      <button onClick={handleClearTodos}>Clear</button>
+      <button onClick={handleClearTodos}>Clear Done</button>
     </>
   )
 }
