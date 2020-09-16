@@ -6,12 +6,12 @@ import React, { useState, useRef, useEffect } from "react";
 import TaskList from "./TaskList";
 import { v4 as uuidv4 } from "uuid";
 
-const LOCAL_STORAGE_KEY = 'todoApp.todos'
+const LOCAL_STORAGE_KEY = 'tomatrackerApp.tasks'
 
 export default function TaskHandler() {
 
   const [todos, setTodos] = useState([]) //[{id: 1, name:'todo1', complete: false}]
-  const todoNameRef = useRef()
+  const todoNameRef = useRef() //
 
   /*
   This checks if something's stored and if it is, it loads it
