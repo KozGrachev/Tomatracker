@@ -1,29 +1,30 @@
-/*
-useState is needed to save the current list of things that need doing
+/*useState is needed to save the current list of things that need doing
 useRef instead allows us to access the input box
-uuid will help provide a unique id to todos
+uuid will help provide a unique id to todos*/
 
-*/
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
-//import "./App.css";
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 export default function TaskHandler() {
-  const [todos, setTodos] = useState([]) //{id: 1, name:'todo1', complete: false}
+
+  const [todos, setTodos] = useState([]) //[{id: 1, name:'todo1', complete: false}]
   const todoNameRef = useRef()
 
   /*
-  This checks if something's stored and if it is, it loads it*/
+  This checks if something's stored and if it is, it loads it
+  Note: JSON.parse converts string to an array
+  */
   useEffect(() => {
-    /*JSON.parse converts string to an array*/
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storedTodos) setTodos(storedTodos);
   }, []);
   /*
-  Anytime anything in the array changes, it will call useeffect function*/
+  Anytime anything in the array changes, it will call useeffect function.
+  Note:JSON.stringify changes array into a string for local storage
+  */
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
@@ -59,7 +60,7 @@ export default function TaskHandler() {
   return (
       <>
       <TodoList todos={todos} toggleTodo ={toggleTodo} />
-      <input ref={todoNameRef} type="text" />
+      <input className="input" ref={todoNameRef} type="text" />
       <button className="button" onClick={handleAddTodo}>Add Task</button>
       <button onClick={handleClearTodos}>Clear</button>
     </>
