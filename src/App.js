@@ -1,11 +1,11 @@
 import React from "react";
 import Timer from "./Timer";
-import "./App.css";
+import "./css/app.css";
 import TaskHandler from "./TaskHandler";
 
 function App() {
   return (
-    <div className="flex-wrapper">
+    <div className="flex-body-wrapper">
       <div className="flex-container">
         <TaskHandler />
       </div>

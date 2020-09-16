@@ -1,0 +1,35 @@
+#buttons{
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+}
+
+#playButton{
+  color: green;
+}
+
+#pauseButton{
+  color: red;
+}
+
+button{
+  border-radius: 10px;
+  font-size: medium;
+  padding: 15px;
+  margin: 5%;
+  border: none;
+  background-color: rgba(202, 202, 202, 0.445);
+  color: rgba(255, 255, 255, 0.753);
+}
+
+button:focus{
+  outline: none;
+  /* background: rgba(233, 233, 233, 0.719) */
+  box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.733);
+}
+
+
+button:active{
+  background: rgba(233, 233, 233, 0.719)
+}

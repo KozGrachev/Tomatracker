@@ -7,7 +7,7 @@ uuid will help provide a unique id to todos
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
-import "./App.css";
+//import "./App.css";
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -60,7 +60,7 @@ export default function TaskHandler() {
       <>
       <TodoList todos={todos} toggleTodo ={toggleTodo} />
       <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add Task</button>
+      <button className="button" onClick={handleAddTodo}>Add Task</button>
       <button onClick={handleClearTodos}>Clear</button>
     </>
   )
