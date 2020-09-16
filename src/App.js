@@ -1,6 +1,5 @@
 import React from "react";
 import Timer from "./Timer";
-import "./css/app.css";
 import TaskHandler from "./TaskHandler";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
         <TaskHandler />
       </div>
 
-      <div className="App flex-container-timer">
+      <div className="flex-container-timer">
         <Timer />
       </div>
     </div>
