@@ -57,9 +57,9 @@ export default function TaskHandler() {
   }
 
   return (
-      <>
+    <>
       <TaskList todos={todos} toggleTodo ={toggleTodo} />
-      <input className="input-textbox" ref={todoNameRef} type="text" />
+      <input className="input-textbox-lists" ref={todoNameRef} type="text" />
       <button className="button" onClick={handleAddTodo}>Add Task</button>
       <button onClick={handleClearTodos}>Clear Done</button>
     </>
