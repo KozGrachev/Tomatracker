@@ -6,11 +6,11 @@ import TaskHandler from "./TaskHandler";
 function App() {
   return (
     <div className="flex-body-wrapper">
-      <div className="flex-container">
+      <div className="flex-container-list">
         <TaskHandler />
       </div>
 
-      <div className="App flex-container">
+      <div className="App flex-container-timer">
         <Timer />
       </div>
     </div>

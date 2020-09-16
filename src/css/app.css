@@ -23,13 +23,21 @@ width: 100%;
 height: 100vh;
 }
 
-.flex-container {
+.flex-container-list {
 width: 50%;
 padding-left: 10px;
 padding-right: 10px;
 border-style: solid;
 border-color: rgb(71, 67, 80);
 }
+
+.flex-container-timer {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: solid;
+  border-color: rgb(71, 67, 80);
+  }
 
 
 /*
