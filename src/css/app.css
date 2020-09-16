@@ -1,0 +1,112 @@
+@import 'timer.css';
+@import 'task-handler.css';
+@import 'buttons.css';
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.582);
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  width: 1fr;
+  height: 100vh;
+  background-color: rgb(227, 243, 221);
+}
+
+.flex-body-wrapper {
+display: flex;
+flex-flow: row wrap;
+width: 100%;
+height: 100vh;
+}
+
+.flex-container-list {
+width: 50%;
+padding-left: 10px;
+padding-right: 10px;
+border-style: solid;
+border-color: rgb(71, 67, 80);
+}
+
+.flex-container-timer {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: solid;
+  border-color: rgb(71, 67, 80);
+  }
+
+
+/*
+@import 'buttons.css';
+@import 'recipe-list.css';
+@import 'recipe.css';
+@import 'ingredient-list.css';
+@import 'recipe-edit.css';
+@import 'author-list.css';'
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  OLD CSS TO REMOVE NEXT TIME
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
