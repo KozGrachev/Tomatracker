@@ -3,15 +3,14 @@ useRef instead allows us to access the input box
 uuid will help provide a unique id to todos*/
 
 import React, { useState, useRef, useEffect } from "react";
-import TaskList from "./TaskList";
+import HabitList from "./HabitList";
 import { v4 as uuidv4 } from "uuid";
 
-const LOCAL_STORAGE_KEY = 'tomatrackerApp.tasks'
+const LOCAL_STORAGE_KEY = "tomatrackerApp.habits";
 
-export default function TaskHandler() {
-
-  const [todos, setTodos] = useState([]) //[{id: 1, name:'todo1', complete: false}]
-  const todoNameRef = useRef() //
+export default function HabitHandler() {
+  const [todos, setTodos] = useState([]); //[{id: 1, name:'todo1', complete: false}]
+  const todoNameRef = useRef(); //
 
   /*
   This checks if something's stored and if it is, it loads it
@@ -43,25 +42,34 @@ export default function TaskHandler() {
   }
 
   function toggleTodo(id) {
-    const newTodos = [...todos]
+    const newTodos = [...todos];
     /*Find the id*/
-    const todo = newTodos.find(todo => todo.id === id)
+    const todo = newTodos.find((todo) => todo.id === id);
     /*toggle that todo to it's opposite*/
-    todo.complete = !todo.complete
-    setTodos(newTodos)
+    todo.complete = !todo.complete;
+    setTodos(newTodos);
   }
 
-  function handleClearTodos() {
-    const newTodos = todos.filter(todo => !todo.complete)
+  function handleDeleteSelectedHabits() {
+    const newTodos = todos.filter((todo) => !todo.complete);
+    setTodos(newTodos);
+  }
+
+  function handleClearHabits() {
+    const newTodos = todos.map((todo) => {
+      todo.complete = false;
+      return todo;
+    });
     setTodos(newTodos);
   }
 
   return (
     <>
-      <TaskList todos={todos} toggleTodo ={toggleTodo} />
+      <HabitList todos={todos} toggleTodo={toggleTodo} />
       <input className="input-textbox-lists" ref={todoNameRef} type="text" />
-      <button className="button" onClick={handleAddTodo}>Add Task</button>
-      <button onClick={handleClearTodos}>Clear Done</button>
+      <button className="button" onClick={handleAddTodo}>Add Habit</button>
+      <button className="button" onClick={handleClearHabits}>Reset Habits</button>
+      <button className="button" onClick={handleDeleteSelectedHabits}>Delete Habits</button>
     </>
-  )
+  );
 }
