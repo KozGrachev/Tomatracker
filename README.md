@@ -7,7 +7,7 @@ At a simple level, the program should help the programmer know what needs to be 
 ## Core functionality
 
 - To-do list
-  - Each item can be a simple task, a note or a sub-list 
+  - Each item can be a simple task, a note or a sub-list
   - Items can be flagged as short tasks for use in the tomato timer breaks.
 - Pomodoro timer
   - Trigger short tasks mode between work bursts (integrated with habit tracker and to-do list)
