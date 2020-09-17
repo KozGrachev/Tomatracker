@@ -1,11 +1,99 @@
-.input-textbox-lists {
-  border:none;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  border-radius: 5px;
-  font-size: inherit;
-  padding: 5px 10px;
-  outline: none;
-  width: 100%;
-  background: transparent;
+#buttons {
+  position: relative;
+  display: inline-block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+button {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 20%;
+  font-size: 6vmin;
+  margin: 2vmin;
+  border: none;
+  background: transparent;
+  text-align: center;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+button:hover {
+  outline: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+button:focus {
+  outline: none;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+button:active {
+  background: transparent;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+.input-textbox-lists {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+  width: auto;
+  height: 10vmin;
+  border-radius: 5vmin;
+  font-size: 6vmin;
+  margin: 2vmin;
+  border: none;
+  background: transparent;
+  text-align: center;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+.input-textbox-lists:hover {
+  outline: none;
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+.input-textbox-lists:active {
+  outline: none;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+
+.input-textbox-lists:focus {
+  outline: none;
+  background: transparent;
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+/*# sourceMappingURL=task-handler.css.map */

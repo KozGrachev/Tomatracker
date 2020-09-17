@@ -1,0 +1,111 @@
+$foc-bg-color:rgb(85, 85, 85);
+$act-bg-color: rgb(43, 43, 43);
+$size-ratio: 10vmin;
+$btn-size: $size-ratio;
+
+
+
+$btn-shad-size: $size-ratio * 0.05;
+$active-btn-shad-size: $size-ratio * 0.05;;
+$hover-btn-shad-size: $size-ratio * 0.1;;
+$shad-col: rgba(0, 0, 0, 0.088);
+$light-col: rgba(255, 255, 255, 0.021);
+
+#buttons {
+	position: relative;
+	display: inline-block;
+	align-items: center;
+	// width: 100%;
+}
+
+button {
+  transform: scale(1);
+  transition-property: box-shadow, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(.68,-0.55,.25,3.49);
+
+  width: $btn-size;
+  height: $btn-size;
+	border-radius: 20%;
+  font-size: $btn-size * 0.6;
+	// padding: $size-ratio * 0.5;
+	margin: $size-ratio * 0.2;
+	border: none;
+  background: transparent;
+  text-align: center;
+  box-shadow:
+  $btn-shad-size 0px $btn-shad-size $shad-col,
+  0px $btn-shad-size $btn-shad-size $shad-col,
+  (-$btn-shad-size) 0px $btn-shad-size $light-col,
+  0px (-$btn-shad-size) $btn-shad-size $light-col,
+  inset $btn-shad-size 0px $btn-shad-size  $light-col,
+  inset 0px $btn-shad-size $btn-shad-size  $light-col,
+  inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+  inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+  $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+  (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+  inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+  inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+
+  &:hover {
+    outline: none;
+    transform: scale(0.95);
+		box-shadow:
+    $hover-btn-shad-size 0px $hover-btn-shad-size $shad-col,
+    0px $hover-btn-shad-size $hover-btn-shad-size $shad-col,
+    (-$hover-btn-shad-size) 0px $hover-btn-shad-size $light-col,
+    0px (-$hover-btn-shad-size) $hover-btn-shad-size $light-col,
+    inset $btn-shad-size 0px $btn-shad-size  $light-col,
+    inset 0px $btn-shad-size $btn-shad-size  $light-col,
+    inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+    inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+    $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+  }
+
+	&:focus {
+    outline: none;
+		box-shadow:
+    $btn-shad-size 0px $btn-shad-size $shad-col,
+    0px $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) 0px $btn-shad-size $light-col,
+    0px (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size 0px $btn-shad-size  $light-col,
+    inset 0px $btn-shad-size $btn-shad-size  $light-col,
+    inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+    inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+    $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+  }
+
+
+	&:active {
+    background: transparent;
+
+    transform: scale(0.95);
+		box-shadow:
+    $hover-btn-shad-size 0px $hover-btn-shad-size $shad-col,
+    0px $hover-btn-shad-size $hover-btn-shad-size $shad-col,
+    (-$hover-btn-shad-size) 0px $hover-btn-shad-size $light-col,
+    0px (-$hover-btn-shad-size) $hover-btn-shad-size $light-col,
+    inset $btn-shad-size 0px $btn-shad-size  $shad-col,
+    inset 0px $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) 0px $btn-shad-size  $light-col,
+    inset 0px (-$btn-shad-size) $btn-shad-size  $light-col,
+
+    $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+
+  }
+
+
+}

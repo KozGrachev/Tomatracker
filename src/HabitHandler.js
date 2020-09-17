@@ -67,9 +67,9 @@ export default function HabitHandler() {
     <>
       <HabitList habits={habits} toggleHabit={toggleHabit} />
       <input className="input-textbox-lists" ref={habitNameRef} type="text" />
-      <button className="button" onClick={handleAddhabit}>Add Habit</button>
-      <button className="button" onClick={handleClearHabits}>Reset Habits</button>
-      <button className="button" onClick={handleDeleteSelectedHabits}>Delete Habits</button>
+      <button className="button" onClick={handleAddhabit}>+</button>
+      <button className="button" onClick={handleClearHabits}>&#8634;</button>
+      <button className="button" onClick={handleDeleteSelectedHabits}>-</button>
     </>
   );
 }

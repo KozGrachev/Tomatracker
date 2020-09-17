@@ -1,35 +1,53 @@
-#buttons{
+#buttons {
   position: relative;
   display: inline-block;
-  align-items: center;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#playButton{
-  color: green;
-}
-
-#pauseButton{
-  color: red;
-}
-
-button{
-  border-radius: 10px;
-  font-size: medium;
-  padding: 15px;
-  margin: 5px;
+button {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: -webkit-box-shadow, -webkit-transform;
+  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 3.49);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 20%;
+  font-size: 6vmin;
+  margin: 2vmin;
   border: none;
-  background-color: rgba(202, 202, 202, 0.445);
-  color: rgba(255, 255, 255, 0.753);
+  background: transparent;
+  text-align: center;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
 }
 
-button:focus{
+button:hover {
   outline: none;
-  /* background: rgba(233, 233, 233, 0.719) */
-  box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.733);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
 }
 
-
-button:active{
-  background: rgba(233, 233, 233, 0.719)
+button:focus {
+  outline: none;
+  -webkit-box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px 0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset -0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px -0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
 }
+
+button:active {
+  background: transparent;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+          box-shadow: 1vmin 0px 1vmin rgba(0, 0, 0, 0.088), 0px 1vmin 1vmin rgba(0, 0, 0, 0.088), -1vmin 0px 1vmin rgba(255, 255, 255, 0.021), 0px -1vmin 1vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0px 0.5vmin rgba(0, 0, 0, 0.088), inset 0px 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin 0px 0.5vmin rgba(255, 255, 255, 0.021), inset 0px -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021), inset 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.088), inset -0.5vmin -0.5vmin 0.5vmin rgba(255, 255, 255, 0.021);
+}
+/*# sourceMappingURL=buttons.css.map */

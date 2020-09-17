@@ -1,0 +1,68 @@
+
+$timer-size: 300px;
+$bg-color:#292929;
+
+svg circle{
+  /* border: 3px solid red; */
+  stroke: rgba(116, 101, 101, 0.281);
+  stroke-width: 5px;
+  fill: transparent;
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: 500px;
+  animation: dash-animation 30s ease forwards;
+}
+
+.circle{
+  border-radius: 50%;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  /* background: transparent; */
+  /* border: 3px solid green; */
+  /* background-color: rgba(255, 255, 255, 0.226); */
+}
+
+.timerDimensions{
+  width: $timer-size;
+  height: $timer-size;
+}
+
+.svgDimensions{
+  width: $timer-size * 1.01;
+  height: $timer-size * 1.01;
+}
+
+.timerPosition{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#timeDisplay {
+  font-size: 70px;
+  color:rgba(121, 121, 121, 0.445);
+}
+
+#work-timeline{
+  position: relative;
+  /* width: 90%;
+  height: 90%; */
+  /* background: red; */
+  border: 3px dashed rgba(255, 255, 255, 0.541);
+  /* dash */
+}
+
+#rest-timeline{
+  position: relative;
+}
+
+@keyframes dash-animation{
+  to{
+    stroke-dashoffset: 200;
+  }
+}

@@ -1,44 +1,60 @@
-svg circle{
+svg circle {
   /* border: 3px solid red; */
   stroke: rgba(116, 101, 101, 0.281);
   stroke-width: 5px;
   fill: transparent;
   stroke-dasharray: 1000px;
   stroke-dashoffset: 500px;
-  animation: dash-animation 30s ease forwards;
+  -webkit-animation: dash-animation 30s ease forwards;
+          animation: dash-animation 30s ease forwards;
 }
 
-
-.circle{
+.circle {
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
+  /* display: flex; */
+  /* justify-content: center; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* background: transparent; */
   /* border: 3px solid green; */
+  /* background-color: rgba(255, 255, 255, 0.226); */
 }
 
-.timerContainer{
-  position: absolute;
-  left:50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+.timerDimensions {
   width: 300px;
   height: 300px;
+}
+
+.svgDimensions {
+  width: 303px;
+  height: 303px;
+}
+
+.timerPosition {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: rgba(255, 255, 255, 0.226);
-
-
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #timeDisplay {
   font-size: 70px;
+  color: rgba(121, 121, 121, 0.445);
 }
 
-#work-timeline{
+#work-timeline {
   position: relative;
   /* width: 90%;
   height: 90%; */
@@ -47,12 +63,19 @@ svg circle{
   /* dash */
 }
 
-#rest-timeline{
+#rest-timeline {
   position: relative;
 }
 
-@keyframes dash-animation{
-  to{
+@-webkit-keyframes dash-animation {
+  to {
     stroke-dashoffset: 200;
   }
 }
+
+@keyframes dash-animation {
+  to {
+    stroke-dashoffset: 200;
+  }
+}
+/*# sourceMappingURL=timer.css.map */

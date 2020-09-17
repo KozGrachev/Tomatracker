@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Input from "./Input";
 //import "./App.css";
 
 function Timer(props) {
@@ -40,45 +41,35 @@ function Timer(props) {
   const restTime = time(seconds/6);
   console.log("Rest time: " + restTime);
 
-  function displayWorkMode () {
+  function display (mode) {
 
-    return <div className="timerContainer circle">
-      <div id="timeDisplay">
-        {time(seconds)}
-      </div>
-      <div id="buttons">
-        { isRunning ?
-          <button id="pauseButton" onClick={() => setIsRunning(!isRunning)}>Pause</button> :
-          <button id="playButton" onClick={() => setIsRunning(!isRunning)}>Start</button> // Good buttons only flip a boolean. They don't contain any complex logic
-        }
-        <button
-          id="resetButton"
-          disabled={seconds === 0 && !isRunning}
-          onClick={() =>{
-          setSeconds(0);
-          setIsRunning(false);
-          }}>Reset</button>
-      </div>
-    </div>
+    return <>
+
+      <a className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
+        <div id="timeDisplay">
+          {time(seconds)}
+        </div>
+      </a>
+      {!isRunning ? <Input className="timerPosition" setTime={setTime} /> : ""}
+    </>
   }
-
-  function displayRestMode () {
-    return <div>REST MODE</div>
-  }
-
-  function displayFocusMode () { return <div>FOCUS MODE</div>}
-  function displayInputMode () { return <div>INPUT MODE</div>}
 
   function selectMode () {
 
+    return (
+      mode === 'work' && isRunning === true ? display('work') :
+      mode === 'rest' && isRunning === true  ? display('rest') :
+      mode === 'focus' && isRunning === true  ? display('focus') :
+      mode === 'input' || isRunning === false  ? display('input') :
+      "INVALID MODE"
+    )
+  }
+  function setTime (time) {
+    setSeconds(time);
   }
 
   return (
-    mode === 'work' || isRunning === true ? displayWorkMode() :
-    mode === 'rest' || isRunning === true  ? displayRestMode() :
-    mode === 'focus' || isRunning === true  ? displayFocusMode() :
-    mode === 'focus' || isRunning === true  ? displayInputMode() :
-    "INVALID MODE"
+      selectMode()
   )
 }
 
