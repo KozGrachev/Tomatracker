@@ -13,7 +13,8 @@
 body{
   width: 1fr;
   height: 100vh;
-  background-color: rgb(39, 35, 34);
+  /* background-color: rgb(39, 35, 34);  Dark Mode */
+  background-color: rgb(207, 200, 198);
 }
 
 .flex-body-wrapper {
@@ -25,8 +26,8 @@ height: 100vh;
 
 .flex-container-lists {
   position: relative;
-width: 50%;
-padding: 2%;
+  width: 50%;
+  padding: 2%;
 }
 
 .habit-container {
