@@ -1,25 +1,15 @@
+@import 'neumorphic-styling.scss';
 
-$timer-size: 300px;
-$bg-color:#292929;
+$timer-size: $size-ratio * 10;
 
-svg circle{
-  /* border: 3px solid red; */
-  stroke: rgba(116, 101, 101, 0.281);
-  stroke-width: 5px;
-  fill: transparent;
-  stroke-dasharray: 1000px;
-  stroke-dashoffset: 500px;
-  animation: dash-animation 30s ease forwards;
-}
 
 .circle{
   border-radius: 50%;
-  /* display: flex; */
-  /* justify-content: center; */
+
   align-items: center;
-  /* background: transparent; */
-  /* border: 3px solid green; */
-  /* background-color: rgba(255, 255, 255, 0.226); */
+  transform-origin: center;
+  transform: rotate(-90deg);
+  position: absolute;
 }
 
 .timerDimensions{
@@ -27,9 +17,33 @@ svg circle{
   height: $timer-size;
 }
 
+#dial-container{
+  display: grid;
+  grid-template-rows: 3fr 3fr 3fr;
+  grid-template-columns: auto auto auto auto;
+  grid-template-areas:
+    ". . . ."
+    ". time time ."
+    ". half-hour hour .";
+}
+
+#set-half-hour{
+  grid-area: half-hour;
+  width: 50px;
+  height: 100px;
+  border-radius: 0 100px 100px 0;
+
+  background-color: $timer-bg;
+}
+
+#dial-panel{
+  border-radius: 50%;
+
+}
+
 .svgDimensions{
-  width: $timer-size * 1.01;
-  height: $timer-size * 1.01;
+  width: $timer-size * 1.2;
+  height: $timer-size * 1.2;
 }
 
 .timerPosition{
@@ -43,9 +57,10 @@ svg circle{
 
 }
 
-#timeDisplay {
+#time-display {
+  grid-area: time;
   font-size: 70px;
-  color:rgba(121, 121, 121, 0.445);
+  // color:rgba(121, 121, 121, 0.445);
 }
 
 #work-timeline{
@@ -61,8 +76,10 @@ svg circle{
   position: relative;
 }
 
-@keyframes dash-animation{
-  to{
-    stroke-dashoffset: 200;
-  }
-}
+/*
+// @keyframes dash-animation{
+//   to{
+//     stroke-dashoffset: 200;
+//   }
+// }
+*/

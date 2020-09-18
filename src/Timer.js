@@ -11,20 +11,13 @@ function Timer(props) {
 
   useEffect(() => {
     if (isRunning ) {
-      const id = window.setTimeout(() => {   // Allows us to call set the next value of seconds only once during this render
-        setSeconds(seconds => seconds - 1)
-      } // Passing a callback to setSeconds stops the change in seconds triggering the next render.
-        // It allows react to know what the value of seconds will be before actually assigning it.
-      , 1000   // It should assign only after the interval has elapsed and not when this part of the code is rendered.
-      );
+      const id = window.setTimeout(() => {
+        setSeconds(seconds => seconds - 1)}, 1000);
       if (seconds <= 0) {
         setIsRunning(false);
       }
       return () => window.clearTimeout(id); //cleanup function:....
     }
-    // else {
-    //   setMode("input");
-    // }
 
     console.log("Re-rendering...")
   }, [seconds, isRunning]); // Dependency array - rerender this entire function in order to change the value of seconds. But we don't want to do this because
@@ -43,15 +36,16 @@ function Timer(props) {
 
   function display (mode) {
 
-    return <>
+    return <div id="dial-container">
 
-      <a className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
+      <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
         <div id="timeDisplay">
           {time(seconds)}
         </div>
       </a>
       {!isRunning ? <Input className="timerPosition" setTime={setTime} /> : ""}
-    </>
+      {/* <div id="set-half-hour"></div> */}
+    </div>
   }
 
   function selectMode () {

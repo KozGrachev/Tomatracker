@@ -1,4 +1,16 @@
-button, button:focus, button:hover, button:active {
+/*
+// // $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// // $light-col: rgba(255, 255, 255, 0.021);
+// $shad-col: rgba(0, 0, 0, 0.034); // Light Mode
+// $light-col: rgba(255, 255, 255, 0.123);
+*/
+/* Dark Mode  */
+/* Light Mode */
+/*
+// $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// $light-col: rgba(255, 255, 255, 0.021);
+*/
+button, button:hover, button:active {
   -webkit-transition: background-color 100ms ease-out, -webkit-box-shadow 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49), -webkit-transform 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49);
   transition: background-color 100ms ease-out, -webkit-box-shadow 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49), -webkit-transform 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49);
   transition: box-shadow 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49), transform 200ms cubic-bezier(0.68, -0.55, 0.25, 3.49), background-color 100ms ease-out;
@@ -11,9 +23,28 @@ button, button:focus, button:hover, button:active {
   background: transparent;
   text-align: center;
   outline: none;
+  /*
+// &:focus {
+//   outline: none;
+//   box-shadow:
+//   $btn-shad-size 0px $btn-shad-size $shad-col,
+//   0px $btn-shad-size $btn-shad-size $shad-col,
+//   (-$btn-shad-size) 0px $btn-shad-size $light-col,
+//   0px (-$btn-shad-size) $btn-shad-size $light-col,
+//   inset $btn-shad-size 0px $btn-shad-size  $light-col,
+//   inset 0px $btn-shad-size $btn-shad-size  $light-col,
+//   inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+//   inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+//   $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+//   (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+//   inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+//   inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+// }
+*/
 }
 
-button, button:focus {
+button {
   -webkit-box-shadow: 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
           box-shadow: 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
 }
@@ -22,15 +53,15 @@ button:hover {
   outline: none;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
-  -webkit-box-shadow: 0.65vmin 0px 0.65vmin rgba(0, 0, 0, 0.034), 0px 0.65vmin 0.65vmin rgba(0, 0, 0, 0.034), -0.65vmin 0px 0.65vmin rgba(255, 255, 255, 0.123), 0px -0.65vmin 0.65vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
-          box-shadow: 0.65vmin 0px 0.65vmin rgba(0, 0, 0, 0.034), 0px 0.65vmin 0.65vmin rgba(0, 0, 0, 0.034), -0.65vmin 0px 0.65vmin rgba(255, 255, 255, 0.123), 0px -0.65vmin 0.65vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
+  -webkit-box-shadow: 0.78vmin 0px 0.78vmin rgba(0, 0, 0, 0.034), 0px 0.78vmin 0.78vmin rgba(0, 0, 0, 0.034), -0.78vmin 0px 0.78vmin rgba(255, 255, 255, 0.123), 0px -0.78vmin 0.78vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
+          box-shadow: 0.78vmin 0px 0.78vmin rgba(0, 0, 0, 0.034), 0px 0.78vmin 0.78vmin rgba(0, 0, 0, 0.034), -0.78vmin 0px 0.78vmin rgba(255, 255, 255, 0.123), 0px -0.78vmin 0.78vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px 0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset -0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px -0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
 }
 
 button:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
-  -webkit-box-shadow: 0.65vmin 0px 0.65vmin rgba(0, 0, 0, 0.034), 0px 0.65vmin 0.65vmin rgba(0, 0, 0, 0.034), -0.65vmin 0px 0.65vmin rgba(255, 255, 255, 0.123), 0px -0.65vmin 0.65vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
-          box-shadow: 0.65vmin 0px 0.65vmin rgba(0, 0, 0, 0.034), 0px 0.65vmin 0.65vmin rgba(0, 0, 0, 0.034), -0.65vmin 0px 0.65vmin rgba(255, 255, 255, 0.123), 0px -0.65vmin 0.65vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
+  -webkit-box-shadow: 0.78vmin 0px 0.78vmin rgba(0, 0, 0, 0.034), 0px 0.78vmin 0.78vmin rgba(0, 0, 0, 0.034), -0.78vmin 0px 0.78vmin rgba(255, 255, 255, 0.123), 0px -0.78vmin 0.78vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
+          box-shadow: 0.78vmin 0px 0.78vmin rgba(0, 0, 0, 0.034), 0px 0.78vmin 0.78vmin rgba(0, 0, 0, 0.034), -0.78vmin 0px 0.78vmin rgba(255, 255, 255, 0.123), 0px -0.78vmin 0.78vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0px 0.325vmin rgba(0, 0, 0, 0.034), inset 0px 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin 0px 0.325vmin rgba(255, 255, 255, 0.123), inset 0px -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123), inset 0.325vmin 0.325vmin 0.325vmin rgba(0, 0, 0, 0.034), inset -0.325vmin -0.325vmin 0.325vmin rgba(255, 255, 255, 0.123);
 }
 
 #buttons {
@@ -44,7 +75,7 @@ button:active {
 button {
   width: 6.5vmin;
   height: 6.5vmin;
-  border-radius: 20%;
+  border-radius: 21%;
 }
 
 button:active {

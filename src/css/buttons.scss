@@ -1,22 +1,9 @@
 @import 'neumorphic-styling.scss';
-// $foc-bg-color:rgb(85, 85, 85);
-// $act-bg-color: rgb(43, 43, 43);
-// $size-ratio: 6.5vmin;
-// $btn-size: $size-ratio;
-
-
-
-// $btn-shad-size: $size-ratio * 0.05;
-// $active-btn-shad-size: $size-ratio * 0.05;;
-// $hover-btn-shad-size: $size-ratio * 0.1;;
-// $shad-col: rgba(0, 0, 0, 0.088);
-// $light-col: rgba(255, 255, 255, 0.021);
 
 #buttons {
 	position: relative;
 	display: inline-block;
   align-items: center;
-	// width: 100%;
 }
 
 button {
@@ -30,7 +17,6 @@ button {
   }
 
 	&:focus {
-    @extend %nm-form--convex;
   }
 
 

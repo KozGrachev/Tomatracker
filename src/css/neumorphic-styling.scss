@@ -2,24 +2,40 @@ $foc-bg-color:rgb(85, 85, 85);
 $act-bg-color: rgb(43, 43, 43);
 $size-ratio: 6.5vmin;
 $btn-size: $size-ratio;
-$btn-bord-rad: 20%;
+$btn-bord-rad: 21%;
 $input-bord-rad: $btn-size * 0.5;
 
 
 $btn-shad-size: $size-ratio * 0.05;
 $active-btn-shad-size: $size-ratio * 0.05;;
-$hover-btn-shad-size: $size-ratio * 0.1;;
-// $shad-col: rgba(0, 0, 0, 0.088); // Dark mode
+$hover-btn-shad-size: $size-ratio * 0.12;
+
+/*
+// // $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// // $light-col: rgba(255, 255, 255, 0.021);
+// $shad-col: rgba(0, 0, 0, 0.034); // Light Mode
+// $light-col: rgba(255, 255, 255, 0.123);
+*/
+
+/* Dark Mode  */
+$bg-color-dark: rgb(39, 35, 34);
+/* Light Mode */
+$bg-color-light: rgb(207, 200, 198);
+$list-bg: $bg-color-light;
+
+$timer-bg: lighten($list-bg, 28%);
+
+/*
+// $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
 // $light-col: rgba(255, 255, 255, 0.021);
+*/
 $shad-col: rgba(0, 0, 0, 0.034);
 $light-col: rgba(255, 255, 255, 0.123);
 
-// #buttons {
-// 	position: relative;
-// 	display: inline-block;
-// 	align-items: center;
-// 	// width: 100%;
-// }
+
+%body-theme{
+  background-color: $list-bg;
+}
 
 %nm-form {
   transition:
@@ -28,9 +44,7 @@ $light-col: rgba(255, 255, 255, 0.123);
   background-color 100ms ease-out;
 
   transform: scale(1);
-	// border-radius: 20%;
   font-size: $btn-size * 0.6;
-	// padding: $size-ratio * 0.5;
 	margin: $size-ratio * 0.2;
 	border: none;
   background: transparent;
@@ -75,6 +89,7 @@ $light-col: rgba(255, 255, 255, 0.123);
       inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
   }
 
+  /*
 // &:focus {
 //   outline: none;
 //   box-shadow:
@@ -92,7 +107,7 @@ $light-col: rgba(255, 255, 255, 0.123);
 //   inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
 //   inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
 // }
-
+*/
 
   &--concave {
     @extend %nm-form;

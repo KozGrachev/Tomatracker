@@ -12,14 +12,13 @@ const Input = (props) => {
     return (
 
         <div >
-            <div className="timerPosition svgDimensions">
+            {/* <div className="timerPosition svgDimensions">
                 <svg height="100%" width="100%">
                     <circle cx="50%" cy="50%" r="49%" stroke="black" stroke-width="3" fill="red" />
                 </svg>
-            </div>
+            </div> */}
 
             <div className="timerPosition">
-            </div>
             <input
 
                 onChange={handleChange}
@@ -34,6 +33,7 @@ const Input = (props) => {
                     // setUserInput();
                 }}
             >&#9094;</button>
+            </div>
         </div>
     )
 

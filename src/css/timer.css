@@ -1,34 +1,59 @@
-svg circle {
-  /* border: 3px solid red; */
-  stroke: rgba(116, 101, 101, 0.281);
-  stroke-width: 5px;
-  fill: transparent;
-  stroke-dasharray: 1000px;
-  stroke-dashoffset: 500px;
-  -webkit-animation: dash-animation 30s ease forwards;
-          animation: dash-animation 30s ease forwards;
-}
-
+/*
+// // $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// // $light-col: rgba(255, 255, 255, 0.021);
+// $shad-col: rgba(0, 0, 0, 0.034); // Light Mode
+// $light-col: rgba(255, 255, 255, 0.123);
+*/
+/* Dark Mode  */
+/* Light Mode */
+/*
+// $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// $light-col: rgba(255, 255, 255, 0.021);
+*/
 .circle {
   border-radius: 50%;
-  /* display: flex; */
-  /* justify-content: center; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* background: transparent; */
-  /* border: 3px solid green; */
-  /* background-color: rgba(255, 255, 255, 0.226); */
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
 }
 
 .timerDimensions {
-  width: 300px;
-  height: 300px;
+  width: 65vmin;
+  height: 65vmin;
+}
+
+#dial-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 3fr 3fr;
+      grid-template-rows: 3fr 3fr 3fr;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+      grid-template-areas: ". . . ." ". time time ." ". half-hour hour .";
+}
+
+#set-half-hour {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: half-hour;
+  width: 50px;
+  height: 100px;
+  border-radius: 0 100px 100px 0;
+  background-color: white;
+}
+
+#dial-panel {
+  border-radius: 50%;
 }
 
 .svgDimensions {
-  width: 303px;
-  height: 303px;
+  width: 78vmin;
+  height: 78vmin;
 }
 
 .timerPosition {
@@ -49,9 +74,12 @@ svg circle {
           justify-content: center;
 }
 
-#timeDisplay {
+#time-display {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: time;
   font-size: 70px;
-  color: rgba(121, 121, 121, 0.445);
 }
 
 #work-timeline {
@@ -67,15 +95,11 @@ svg circle {
   position: relative;
 }
 
-@-webkit-keyframes dash-animation {
-  to {
-    stroke-dashoffset: 200;
-  }
-}
-
-@keyframes dash-animation {
-  to {
-    stroke-dashoffset: 200;
-  }
-}
+/*
+// @keyframes dash-animation{
+//   to{
+//     stroke-dashoffset: 200;
+//   }
+// }
+*/
 /*# sourceMappingURL=timer.css.map */

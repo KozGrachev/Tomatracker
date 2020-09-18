@@ -1,12 +1,17 @@
 @import 'neumorphic-styling.scss';
 
 
-.input-textbox-lists {
+label{
+  font-size: $btn-size * 0.5;
+}
+
+input {
 
   @extend %nm-form--convex;
   width: auto;
   text-align: center;
   border-radius: $input-bord-rad;
+
 
 
   &:hover {
