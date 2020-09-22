@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAYA;;;;;EAKE;AAEF,gBAAgB;AAEhB,gBAAgB;AAMhB;;;EAGE",
-    "sources": [
-        "neumorphic-styling.scss"
-    ],
-    "names": [],
-    "file": "neumorphic-styling.css"
-}

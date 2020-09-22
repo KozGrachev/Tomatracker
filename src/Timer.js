@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
-//import "./App.css";
+// import "./css/nm-style.module.scss"
+
 
 function Timer(props) {
   const [timeLength, setTimeLength] = useState(0);

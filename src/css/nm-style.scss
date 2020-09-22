@@ -1,0 +1,81 @@
+@import './variables.scss';
+
+.body-theme{
+  background-color: $list-bg;
+}
+
+@mixin nm-shape {
+
+  transition:
+  box-shadow 200ms cubic-bezier(.68,-0.55,.25,3.49),
+  transform 200ms cubic-bezier(.68,-0.55,.25,3.49),
+  background-color 100ms ease-out;
+
+  transform: scale(1);
+  font-size: $btn-size * 0.6;
+	margin: $size-ratio * 0.2;
+	border: none;
+  background: transparent;
+  text-align: center;
+  outline: none;
+}
+
+  // @at-root #{&}--convex {
+@mixin nm-shape--convex(){
+  @include nm-shape;
+  box-shadow:
+    $btn-shad-size 0px $btn-shad-size $shad-col,
+    0px $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) 0px $btn-shad-size $light-col,
+    0px (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size 0px $btn-shad-size  $light-col,
+    inset 0px $btn-shad-size $btn-shad-size  $light-col,
+    inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+    inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+    $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+}
+
+  // @at-root #{&}--convex-raised {
+@mixin nm-shape--convex-raised {
+  @include nm-shape;
+  outline: none;
+  transform: scale(0.95);
+  box-shadow:
+    $hover-btn-shad-size 0px $hover-btn-shad-size $shad-col,
+    0px $hover-btn-shad-size $hover-btn-shad-size $shad-col,
+    (-$hover-btn-shad-size) 0px $hover-btn-shad-size $light-col,
+    0px (-$hover-btn-shad-size) $hover-btn-shad-size $light-col,
+    inset $btn-shad-size 0px $btn-shad-size  $light-col,
+    inset 0px $btn-shad-size $btn-shad-size  $light-col,
+    inset (-$btn-shad-size) 0px $btn-shad-size  $shad-col,
+    inset 0px (-$btn-shad-size) $btn-shad-size  $shad-col,
+
+    $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+    (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+    inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+    inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+}
+
+  // @at-root #{&}--concave {
+@mixin nm-shape--concave {
+    @include nm-shape;
+    transform: scale(0.95);
+    box-shadow:
+      $hover-btn-shad-size 0px $hover-btn-shad-size $shad-col,
+      0px $hover-btn-shad-size $hover-btn-shad-size $shad-col,
+      (-$hover-btn-shad-size) 0px $hover-btn-shad-size $light-col,
+      0px (-$hover-btn-shad-size) $hover-btn-shad-size $light-col,
+      inset $btn-shad-size 0px $btn-shad-size  $shad-col,
+      inset 0px $btn-shad-size $btn-shad-size  $shad-col,
+      inset (-$btn-shad-size) 0px $btn-shad-size  $light-col,
+      inset 0px (-$btn-shad-size) $btn-shad-size  $light-col,
+
+      $btn-shad-size $btn-shad-size $btn-shad-size $shad-col,
+      (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size $light-col,
+      inset $btn-shad-size $btn-shad-size $btn-shad-size  $shad-col,
+      inset (-$btn-shad-size) (-$btn-shad-size) $btn-shad-size  $light-col;
+}

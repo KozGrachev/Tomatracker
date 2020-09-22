@@ -1,4 +1,4 @@
-@import 'neumorphic-styling.scss';
+@use 'css/nm-style' as *;
 
 #buttons {
 	position: relative;
@@ -7,21 +7,17 @@
 }
 
 button {
-  @extend %nm-form--convex;
+  @include nm-shape--convex;
   width: $btn-size;
   height: $btn-size;
   border-radius: $btn-bord-rad;
 
   &:hover {
-    @extend %nm-form--convex-raised;
+    @include nm-shape--convex-raised;
   }
-
-	&:focus {
-  }
-
 
 	&:active {
-    @extend %nm-form--concave;
+    @include nm-shape--concave;
     background-color: rgba(29, 168, 126, 0.507);
   }
 }

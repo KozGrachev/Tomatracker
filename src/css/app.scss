@@ -1,14 +1,16 @@
-@import 'timer.scss';
-@import 'task-handler.scss';
-@import 'buttons.scss';
-@import 'neumorphic-styling.scss';
+@import './nm-style.scss';
+@import "buttons.scss";
 
 *, *:before, *:after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: rgba(134, 134, 134, 0.329);
   font-family: 'Montserrat', sans-serif;
+}
+
+button{
+  @include nm-shape--convex();
+  // background-color: blue;
 }
 
 body{
@@ -42,7 +44,6 @@ height: 100vh;
 .task-container {
   height: 50vh;
 }
-
 
 .flex-container-timer {
   background-color:  rgba(255, 255, 255, 0.281);
