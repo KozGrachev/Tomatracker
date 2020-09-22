@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
+// import './css/buttons.scss'
 // import "./css/nm-style.module.scss"
 
 
 function Timer(props) {
-  const [timeLength, setTimeLength] = useState(0);
+  const [timeLength, setMinutesLength] = useState(0);
   const [seconds, setSeconds] = useState(200); // The value (state) does not actually actually change. The function is rerendered with a whole new variable that just happens to have the same name.
   const [isRunning, setIsRunning] = useState(false); // HOOKS: .....
   const [mode, setMode] = useState("work"); // mode values: 'work', 'rest', 'focus', 'input'
@@ -36,20 +37,28 @@ function Timer(props) {
   const restTime = time(seconds / 6);
   console.log("Rest time: " + restTime);
 
+  function setMinutes(minutes) {
+    setSeconds(minutes * 60);
+  }
+
   function display(mode) {
 
-    return <div id="timer-container" className="circle ">
+    return <>
+      <div id="timer-container" className="circle ">
 
-      <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
-        <button id="set-half-hour" className="semi-circle"></button>
-        <button id="set-hour" className="circle"></button>
-        <div id="timeDisplay">
+        <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
 
-          {time(seconds)}
-        </div>
-        {!isRunning ? <Input className="timerPosition" setTime={setTime} /> : ""}
-      </a>
-    </div>
+          <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
+          <button onClick={() => setMinutes(45)} id="set-hour"></button>
+          <div id="timeDisplay">
+            {time(seconds)}
+          </div>
+          {/* {!isRunning ? <Input className="timerPosition" setMinutes={setMinutes} /> : ""} */}
+          <Input className="timerPosition" setMinutes={setMinutes} />
+        </a>
+      </div>
+
+    </>
   }
 
   function selectMode() {
@@ -62,9 +71,7 @@ function Timer(props) {
               "INVALID MODE"
     )
   }
-  function setTime(time) {
-    setSeconds(time);
-  }
+
 
   return (
     selectMode()

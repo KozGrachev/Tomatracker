@@ -11,7 +11,7 @@ const Input = (props) => {
     console.log('userInput: ', userInput)
     return (
 
-        <div className="time-input">
+        <div id="time-input">
             {/* <div className="timerPosition svgDimensions">
                 <svg height="100%" width="100%">
                     <circle cx="50%" cy="50%" r="49%" stroke="black" stroke-width="3" fill="red" />
@@ -19,20 +19,20 @@ const Input = (props) => {
             </div> */}
 
             <div className="timerPosition">
-                <input
+                <input id="min"
 
                     onChange={handleChange}
                     placeholder="minutes"
                     type="number"
                     name="minutes"
                 />
-                {/* <button
+                <button
                     onClick={() => {
-                        props.setTime(userInput * 60);
+                        props.setMinutes(userInput);
 
                         // setUserInput();
                     }}
-                >&#9094;</button> */}
+                >&#9094;</button>
             </div>
         </div>
     )
