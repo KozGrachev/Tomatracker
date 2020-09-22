@@ -8,9 +8,7 @@
 
 button {
   @include nm-shape--convex;
-  width: $btn-size;
-  height: $btn-size;
-  border-radius: $btn-bord-rad;
+
 
   &:hover {
     @include nm-shape--convex-raised;
@@ -20,4 +18,10 @@ button {
     @include nm-shape--concave;
     background-color: rgba(29, 168, 126, 0.507);
   }
+}
+
+.rounded-square{
+  width: $btn-size;
+  height: $btn-size;
+  border-radius: $btn-bord-rad;
 }

@@ -1,5 +1,6 @@
-@import './nm-style.scss';
-@import "buttons.scss";
+@import 'nm-style.scss';
+@import 'buttons.scss';
+@import 'timer.scss';
 
 *, *:before, *:after{
   margin: 0;
@@ -23,7 +24,7 @@ body{
   background-color: rgb(207, 200, 198);
   // background-color: green;
 }
-
+// Add minimum width so that timer can stay on top when window width is reduced
 .flex-body-wrapper {
 display: flex;
 flex-flow: row wrap;

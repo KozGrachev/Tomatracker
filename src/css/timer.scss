@@ -1,0 +1,120 @@
+@import 'nm-style.scss';
+@import 'variables.scss';
+
+svg circle{
+  /* border: 3px solid red; */
+  stroke: rgba(116, 101, 101, 0.281);
+  stroke-width: 5px;
+  fill: transparent;
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: 500px;
+  animation: dash-animation 30s ease forwards;
+}
+
+
+.circle{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  /* border: 3px solid green; */
+}
+
+
+#set-half-hour{
+  @include nm-shape--convex;
+  width: 25px;
+  height: 50px;
+  // position: absolute;
+  // background-color: blue;
+  grid-area: half-hour-button;
+  border-radius: 0 100px 100px 0;
+  place-self: center;
+}
+
+#set-hour{
+  @include nm-shape--convex;
+  width: 50px;
+  height: 50px;
+  // position: absolute;
+  // background-color: blue;
+  grid-area: hour-button;
+  border-radius: 50%;
+  place-self: center;
+}
+
+#timer-container{
+  @include nm-shape--convex;
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.226);
+  grid-area: time;
+}
+
+#timeDisplay {
+  font-family: monospace;
+  grid-area: time;
+  place-self: center;
+  font-size: 75px;
+  //text-align: center;
+}
+
+#work-timeline{
+  position: relative;
+  /* width: 90%;
+  height: 90%; */
+  /* background: red; */
+  border: 3px dashed rgba(255, 255, 255, 0.541);
+  /* dash */
+}
+
+#rest-timeline{
+  position: relative;
+}
+
+@keyframes dash-animation{
+  to{
+    stroke-dashoffset: 200;
+  }
+}
+
+.time-input {
+  grid-area: time-input-area;
+}
+/*Grid CSS*/
+#dial-panel {
+  display: grid;
+  grid-template-columns: 50px 100px 100px 50px;
+  grid-template-rows: 100px 100px 100px;
+
+  grid-template-areas:
+  ". time-input-area time-input-area ."
+  ". time time ."
+  ". half-hour-button hour-button .";
+}
+
+.grid-half-hour-button-position{
+  grid-area: half-hour-button;
+
+  //grid-column: 2 / 3;
+  //grid-row: 3 / 4;
+}
+.grid-hour-button-position{
+  grid-area: hour-button;
+
+  //grid-column: 3 / 4;
+  //grid-row: 3 / 4;
+}
+.grid-time-position{
+  grid-area: time;
+  //grid-column: 2 / 3;
+  //grid-row: 2 / 3;
+}

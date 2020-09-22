@@ -11,9 +11,10 @@ function Timer(props) {
 
 
   useEffect(() => {
-    if (isRunning ) {
+    if (isRunning) {
       const id = window.setTimeout(() => {
-        setSeconds(seconds => seconds - 1)}, 1000);
+        setSeconds(seconds => seconds - 1)
+      }, 1000);
       if (seconds <= 0) {
         setIsRunning(false);
       }
@@ -26,45 +27,47 @@ function Timer(props) {
 
   // const minutes = seconds * 60;
   const time = (s) => {
-    const secs = s%60 < 10 ? "0" + s%60 : s%60;
-    const m = Math.floor(s/60);
+    const secs = s % 60 < 10 ? "0" + s % 60 : s % 60;
+    const m = Math.floor(s / 60);
     const mins = m < 10 ? "0" + m : m;
     return mins + ":" + secs;
   }
 
-  const restTime = time(seconds/6);
+  const restTime = time(seconds / 6);
   console.log("Rest time: " + restTime);
 
-  function display (mode) {
+  function display(mode) {
 
-    return <div id="dial-container">
+    return <div id="timer-container" className="circle ">
 
       <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
+        <button id="set-half-hour" className="semi-circle"></button>
+        <button id="set-hour" className="circle"></button>
         <div id="timeDisplay">
+
           {time(seconds)}
         </div>
+        {!isRunning ? <Input className="timerPosition" setTime={setTime} /> : ""}
       </a>
-      {!isRunning ? <Input className="timerPosition" setTime={setTime} /> : ""}
-      {/* <div id="set-half-hour"></div> */}
     </div>
   }
 
-  function selectMode () {
+  function selectMode() {
 
     return (
       mode === 'work' && isRunning === true ? display('work') :
-      mode === 'rest' && isRunning === true  ? display('rest') :
-      mode === 'focus' && isRunning === true  ? display('focus') :
-      mode === 'input' || isRunning === false  ? display('input') :
-      "INVALID MODE"
+        mode === 'rest' && isRunning === true ? display('rest') :
+          mode === 'focus' && isRunning === true ? display('focus') :
+            mode === 'input' || isRunning === false ? display('input') :
+              "INVALID MODE"
     )
   }
-  function setTime (time) {
+  function setTime(time) {
     setSeconds(time);
   }
 
   return (
-      selectMode()
+    selectMode()
   )
 }
 
