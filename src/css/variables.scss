@@ -1,0 +1,39 @@
+// $foc-bg-color:rgb(85, 85, 85);
+// $act-bg-color: rgb(43, 43, 43);
+$size-ratio: 6.5vmin;
+$btn-size: $size-ratio;
+$btn-bord-rad: 21%;
+$input-bord-rad: $btn-size * 0.5;
+
+
+$btn-shad-size: $size-ratio * 0.05;
+$active-btn-shad-size: $size-ratio * 0.05;;
+$hover-btn-shad-size: $size-ratio * 0.12;
+
+/*
+// // $shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+// // $light-col: rgba(255, 255, 255, 0.021);
+// $shad-col: rgba(0, 0, 0, 0.034); // Light Mode
+// $light-col: rgba(255, 255, 255, 0.123);
+*/
+
+/* Dark Mode  */
+$bg-color-dark: rgb(39, 35, 34);
+/* Light Mode */
+$bg-color-light: rgb(207, 200, 198);
+$bg-color: $bg-color-dark;
+// $timer-bg: lighten($list-bg, 28%);
+
+
+$shad-col: rgba(0, 0, 0, 0.088); // Dark Mode
+$light-col: rgba(255, 255, 255, 0.021);
+
+// $shad-col: rgba(0, 0, 0, 0.034);
+// $light-col: rgba(255, 255, 255, 0.123);
+
+$text-color: rgba(117, 117, 117, 0.479);
+
+$timer-bg-color: transparent;
+$timer-size: $size-ratio * 6;
+$time-disp-txt-size: $timer-size * 0.2;
+$timer-btn-size: $timer-size * 0.2;

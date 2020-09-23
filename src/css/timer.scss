@@ -1,0 +1,167 @@
+@import 'nm-style.scss';
+@import 'variables.scss';
+
+svg circle{
+  /* border: 3px solid red; */
+  stroke: rgba(116, 101, 101, 0.281);
+  stroke-width: 5px;
+  fill: transparent;
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: 500px;
+  animation: dash-animation 30s ease forwards;
+}
+
+
+.circle{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: transparent;
+  /* border: 3px solid green; */
+}
+
+
+#set-half-hour{
+  width: $timer-btn-size * 0.5;
+  height: $timer-btn-size;
+  // position: absolute;
+  // background-color: blue;
+  grid-area: half-hour-button;
+  border-radius: 0 $timer-btn-size $timer-btn-size 0;
+  place-self: center;
+  // justify-self: end;
+  margin-left: $btn-size;
+}
+
+#set-hour{
+  width: $timer-btn-size;
+  height: $timer-btn-size;
+  // position: absolute;
+  // background-color: blue;
+  grid-area: hour-button;
+  border-radius: 50%;
+  place-self: center;
+  // align-self: flex-end;
+}
+
+#timer-container{
+
+  // $btn-shad-size: $timer-size;
+  // @include nm-shape--convex-raised;
+
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: $timer-size;
+  height: $timer-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: time;
+  // background-color: transparent;
+
+
+
+
+  &:hover{
+    // @include nm-shape--convex-raised;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+
+    background-color: rgba(255, 255, 255, 0.226);
+  }
+}
+
+.not-running{
+  @include nm-shape--convex;
+      // background-color: rgba(175, 175, 175, 0.226);
+
+
+}
+
+.running{
+  @include nm-shape--concave;
+  background-color: rgba(0, 0, 0, 0.116);
+
+}
+
+#time-display {
+  grid-area: time;
+  place-self: center;
+  font-size: $time-disp-txt-size;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
+  place-content: center;
+  // grid-template-rows: 100%;
+  grid-template-areas: "tenMins singleMins colon tenSecs singleSecs";
+  // justify-items: center;
+
+  // display: flex
+}
+
+#work-timeline{
+  position: relative;
+  /* width: 90%;
+  height: 90%; */
+  /* background: red; */
+  border: 3px dashed rgba(255, 255, 255, 0.541);
+  /* dash */
+}
+
+#rest-timeline{
+  position: relative;
+}
+
+@keyframes dash-animation{
+  to{
+    stroke-dashoffset: 200;
+  }
+}
+
+#time-input {
+  grid-area: time-input-area;
+  // max-width: 100%;
+  // margin: 0;
+  place-content: center;
+
+}
+
+#time-input input{
+  font-size: 50%;
+  margin: 0;
+  max-width: 75%;
+}
+/*Grid CSS*/
+#dial-panel {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-template-areas:
+  ". time-input-area time-input-area ."
+  ". time time ."
+  ". hour-button half-hour-button .";
+}
+
+.grid-half-hour-button-position{
+  grid-area: half-hour-button;
+
+  //grid-column: 2 / 3;
+  //grid-row: 3 / 4;
+}
+.grid-hour-button-position{
+  grid-area: hour-button;
+
+  //grid-column: 3 / 4;
+  //grid-row: 3 / 4;
+}
+.grid-time-position{
+  grid-area: time;
+  //grid-column: 2 / 3;
+  //grid-row: 2 / 3;
+}

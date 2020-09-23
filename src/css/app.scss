@@ -1,0 +1,71 @@
+@import 'nm-style.scss';
+@import 'buttons.scss';
+@import 'timer.scss';
+@import 'variables.scss';
+@import 'input.scss';
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: $text-color
+}
+
+button{
+  @include nm-shape--convex();
+  // background-color: blue;
+}
+
+body{
+  width: 1fr;
+  height: 100vh;
+  /* Dark Mode  */
+  background-color: $bg-color;
+
+  /* Light Mode */
+  // background-color: $list-bg;
+  // background-color: green;
+}
+// Add minimum width so that timer can stay on top when window width is reduced
+.flex-body-wrapper {
+display: flex;
+flex-wrap: wrap;
+
+width: 1fr;
+height: 100vh;
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .flex-body-wrapper{
+    flex-direction: column-reverse;
+
+  }
+}
+
+.flex-container-lists {
+  // background-color: $bg-color;
+  position: relative;
+  width: 50%;
+  min-width: 500px;
+  padding: 2%;
+}
+
+.habit-container {
+  height: 50vh;
+}
+
+.task-container {
+  height: 50vh;
+}
+
+.flex-container-timer {
+  background-color:  rgba(255, 255, 255, 0.281);
+  // background-color: $timer-bg;
+  position: relative;
+  width: 50%;
+  min-width: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

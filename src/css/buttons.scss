@@ -1,0 +1,27 @@
+@use 'css/nm-style' as *;
+
+#buttons {
+	position: relative;
+	display: inline-block;
+  align-items: center;
+}
+
+button {
+  @include nm-shape--convex;
+
+
+  &:hover {
+    @include nm-shape--convex-raised;
+  }
+
+	&:active {
+    @include nm-shape--concave;
+    background-color: rgba(29, 168, 126, 0.507);
+  }
+}
+
+.rounded-square{
+  width: $btn-size;
+  height: $btn-size;
+  border-radius: $btn-bord-rad;
+}

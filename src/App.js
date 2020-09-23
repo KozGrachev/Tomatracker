@@ -2,6 +2,7 @@ import React from "react";
 import Timer from "./Timer";
 import TaskHandler from "./TaskHandler";
 import HabitHandler from "./HabitHandler";
+import './css/app.scss';
 
 function App() {
   return (

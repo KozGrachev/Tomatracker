@@ -1,84 +1,91 @@
 import React, { useState, useEffect } from "react";
-//import "./App.css";
+import Input from "./Input";
+// import './css/buttons.scss'
+// import "./css/nm-style.module.scss"
+
 
 function Timer(props) {
-  const [timeLength, setTimeLength] = useState(0);
+  // const [timeLength, setMinutesLength] = useState(0);
   const [seconds, setSeconds] = useState(200); // The value (state) does not actually actually change. The function is rerendered with a whole new variable that just happens to have the same name.
   const [isRunning, setIsRunning] = useState(false); // HOOKS: .....
   const [mode, setMode] = useState("work"); // mode values: 'work', 'rest', 'focus', 'input'
 
 
   useEffect(() => {
-    if (isRunning ) {
-      const id = window.setTimeout(() => {   // Allows us to call set the next value of seconds only once during this render
+    if (isRunning) {
+      const id = window.setTimeout(() => {
         setSeconds(seconds => seconds - 1)
-      } // Passing a callback to setSeconds stops the change in seconds triggering the next render.
-        // It allows react to know what the value of seconds will be before actually assigning it.
-      , 1000   // It should assign only after the interval has elapsed and not when this part of the code is rendered.
-      );
+      }, 1000);
       if (seconds <= 0) {
         setIsRunning(false);
       }
       return () => window.clearTimeout(id); //cleanup function:....
     }
-    // else {
-    //   setMode("input");
-    // }
 
     console.log("Re-rendering...")
   }, [seconds, isRunning]); // Dependency array - rerender this entire function in order to change the value of seconds. But we don't want to do this because
   // Uses shallow equality - so if the value is the same, it will not rerender, even if the object is different.
 
-  // const minutes = seconds * 60;
+
   const time = (s) => {
-    const secs = s%60 < 10 ? "0" + s%60 : s%60;
-    const m = Math.floor(s/60);
-    const mins = m < 10 ? "0" + m : m;
-    return mins + ":" + secs;
+    const secs = s % 60 < 10 ? "0" + s % 60 : s % 60;
+    const mins = Math.floor(s / 60);
+    // const minsString = m < 10 ? "0" + m : m;
+    const tenMins = Math.floor(mins / 10);
+    const tenSecs = Math.floor(secs / 10);
+    return [tenMins, mins % 10, tenSecs, secs % 10];
+
+    // return mins + ":" + secs;
   }
 
-  const restTime = time(seconds/6);
+  const timeArr = time(seconds);
+
+  const restTime = time(seconds / 6);
   console.log("Rest time: " + restTime);
 
-  function displayWorkMode () {
+  function setMinutes(minutes) {
+    setSeconds(minutes * 60);
+  }
 
-    return <div className="timerContainer circle">
-      <div id="timeDisplay">
-        {time(seconds)}
+  function display(mode) {
+
+    return <>
+      <div id="timer-container" className={isRunning ? "circle running" : "circle not-running"} >
+
+        <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
+
+          <button onClick={() => setMinutes(45)} id="set-hour"></button>
+          <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
+          <div id="time-display">
+            <div id="ten-mins">{timeArr[0]}</div>
+            <div id="single-mins">{timeArr[1]}</div>
+            <div id="colon">:</div>
+            <div id="ten-secs">{timeArr[2]}</div>
+            <div id="single-secs">{timeArr[3]}</div>
+            {/* {time(seconds)} */}
+          </div>
+          {/* {!isRunning ? <Input className="timerPosition" setMinutes={setMinutes} /> : ""} */}
+          <Input className="timerPosition" setMinutes={setMinutes} />
+        </a>
       </div>
-      <div id="buttons">
-        { isRunning ?
-          <button id="pauseButton" onClick={() => setIsRunning(!isRunning)}>Pause</button> :
-          <button id="playButton" onClick={() => setIsRunning(!isRunning)}>Start</button> // Good buttons only flip a boolean. They don't contain any complex logic
-        }
-        <button
-          id="resetButton"
-          disabled={seconds === 0 && !isRunning}
-          onClick={() =>{
-          setSeconds(0);
-          setIsRunning(false);
-          }}>Reset</button>
-      </div>
-    </div>
+
+    </>
   }
 
-  function displayRestMode () {
-    return <div>REST MODE</div>
+  function selectMode() {
+
+    return (
+      mode === 'work' && isRunning === true ? display('work') :
+        mode === 'rest' && isRunning === true ? display('rest') :
+          mode === 'focus' && isRunning === true ? display('focus') :
+            mode === 'input' || isRunning === false ? display('input') :
+              "INVALID MODE"
+    )
   }
 
-  function displayFocusMode () { return <div>FOCUS MODE</div>}
-  function displayInputMode () { return <div>INPUT MODE</div>}
-
-  function selectMode () {
-
-  }
 
   return (
-    mode === 'work' || isRunning === true ? displayWorkMode() :
-    mode === 'rest' || isRunning === true  ? displayRestMode() :
-    mode === 'focus' || isRunning === true  ? displayFocusMode() :
-    mode === 'focus' || isRunning === true  ? displayInputMode() :
-    "INVALID MODE"
+    selectMode()
   )
 }
 

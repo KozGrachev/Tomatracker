@@ -5,6 +5,7 @@ uuid will help provide a unique id to todos*/
 import React, { useState, useRef, useEffect } from "react";
 import TaskList from "./TaskList";
 import { v4 as uuidv4 } from "uuid";
+// import "./css/nm-style.module.scss";
 
 const LOCAL_STORAGE_KEY = 'tomatrackerApp.tasks'
 
@@ -58,10 +59,10 @@ export default function TaskHandler() {
 
   return (
     <>
-      <TaskList todos={todos} toggleTodo ={toggleTodo} />
+      <TaskList todos={todos} toggleTodo={toggleTodo} />
       <input className="input-textbox-lists" ref={todoNameRef} type="text" />
-      <button className="button" onClick={handleAddTodo}>Add Task</button>
-      <button onClick={handleClearTodos}>Clear Done</button>
+      <button className="rounded-square" onClick={handleAddTodo}>+</button>
+      <button className="rounded-square" onClick={handleClearTodos}>-</button>
     </>
   )
 }
