@@ -5,7 +5,7 @@ import Input from "./Input";
 
 
 function Timer(props) {
-  const [timeLength, setMinutesLength] = useState(0);
+  // const [timeLength, setMinutesLength] = useState(0);
   const [seconds, setSeconds] = useState(200); // The value (state) does not actually actually change. The function is rerendered with a whole new variable that just happens to have the same name.
   const [isRunning, setIsRunning] = useState(false); // HOOKS: .....
   const [mode, setMode] = useState("work"); // mode values: 'work', 'rest', 'focus', 'input'
@@ -26,13 +26,19 @@ function Timer(props) {
   }, [seconds, isRunning]); // Dependency array - rerender this entire function in order to change the value of seconds. But we don't want to do this because
   // Uses shallow equality - so if the value is the same, it will not rerender, even if the object is different.
 
-  // const minutes = seconds * 60;
+
   const time = (s) => {
     const secs = s % 60 < 10 ? "0" + s % 60 : s % 60;
-    const m = Math.floor(s / 60);
-    const mins = m < 10 ? "0" + m : m;
-    return mins + ":" + secs;
+    const mins = Math.floor(s / 60);
+    // const minsString = m < 10 ? "0" + m : m;
+    const tenMins = Math.floor(mins / 10);
+    const tenSecs = Math.floor(secs / 10);
+    return [tenMins, mins % 10, tenSecs, secs % 10];
+
+    // return mins + ":" + secs;
   }
+
+  const timeArr = time(seconds);
 
   const restTime = time(seconds / 6);
   console.log("Rest time: " + restTime);
@@ -44,14 +50,19 @@ function Timer(props) {
   function display(mode) {
 
     return <>
-      <div id="timer-container" className="circle ">
+      <div id="timer-container" className={isRunning ? "circle running" : "circle not-running"} >
 
         <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
 
-          <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
           <button onClick={() => setMinutes(45)} id="set-hour"></button>
-          <div id="timeDisplay">
-            {time(seconds)}
+          <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
+          <div id="time-display">
+            <div id="ten-mins">{timeArr[0]}</div>
+            <div id="single-mins">{timeArr[1]}</div>
+            <div id="colon">:</div>
+            <div id="ten-secs">{timeArr[2]}</div>
+            <div id="single-secs">{timeArr[3]}</div>
+            {/* {time(seconds)} */}
           </div>
           {/* {!isRunning ? <Input className="timerPosition" setMinutes={setMinutes} /> : ""} */}
           <Input className="timerPosition" setMinutes={setMinutes} />

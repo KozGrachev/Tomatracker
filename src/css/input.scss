@@ -1,0 +1,19 @@
+@import 'nm-style.scss';
+
+input {
+  // display: ;
+  // width: ;
+  @include nm-shape--convex;
+  border-radius: $btn-size;
+
+
+  &:hover{
+    @include nm-shape--convex-raised;
+  }
+
+  &:focus{
+    @include nm-shape--concave;
+  }
+
+}
+

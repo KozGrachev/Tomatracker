@@ -17,23 +17,20 @@ const Input = (props) => {
                     <circle cx="50%" cy="50%" r="49%" stroke="black" stroke-width="3" fill="red" />
                 </svg>
             </div> */}
+            <input id="min"
 
-            <div className="timerPosition">
-                <input id="min"
+                onChange={handleChange}
+                placeholder="minutes"
+                type="number"
+                name="minutes"
+            />
+            {/* <button className="square-rounded-corners"
+                onClick={() => {
+                    props.setMinutes(userInput);
 
-                    onChange={handleChange}
-                    placeholder="minutes"
-                    type="number"
-                    name="minutes"
-                />
-                <button
-                    onClick={() => {
-                        props.setMinutes(userInput);
-
-                        // setUserInput();
-                    }}
-                >&#9094;</button>
-            </div>
+                    // setUserInput();
+                }}
+            >&#9094;</button> */}
         </div>
     )
 
