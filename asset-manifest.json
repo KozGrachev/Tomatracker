@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Tomatracker/static/css/main.5544bcae.chunk.css",
+    "main.js": "/Tomatracker/static/js/main.00391a44.chunk.js",
+    "main.js.map": "/Tomatracker/static/js/main.00391a44.chunk.js.map",
+    "runtime-main.js": "/Tomatracker/static/js/runtime-main.cab1e2a6.js",
+    "runtime-main.js.map": "/Tomatracker/static/js/runtime-main.cab1e2a6.js.map",
+    "static/js/2.1591fb37.chunk.js": "/Tomatracker/static/js/2.1591fb37.chunk.js",
+    "static/js/2.1591fb37.chunk.js.map": "/Tomatracker/static/js/2.1591fb37.chunk.js.map",
+    "index.html": "/Tomatracker/index.html",
+    "precache-manifest.c16f43c2be64059d1a3aa90a50a2aab1.js": "/Tomatracker/precache-manifest.c16f43c2be64059d1a3aa90a50a2aab1.js",
+    "service-worker.js": "/Tomatracker/service-worker.js",
+    "static/css/main.5544bcae.chunk.css.map": "/Tomatracker/static/css/main.5544bcae.chunk.css.map",
+    "static/js/2.1591fb37.chunk.js.LICENSE.txt": "/Tomatracker/static/js/2.1591fb37.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cab1e2a6.js",
+    "static/js/2.1591fb37.chunk.js",
+    "static/css/main.5544bcae.chunk.css",
+    "static/js/main.00391a44.chunk.js"
+  ]
+}
