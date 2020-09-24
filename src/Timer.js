@@ -8,8 +8,8 @@ function Timer(props) {
   // const [timeLength, setMinutesLength] = useState(0);
   const [seconds, setSeconds] = useState(200); // The value (state) does not actually actually change. The function is rerendered with a whole new variable that just happens to have the same name.
   const [isRunning, setIsRunning] = useState(false); // HOOKS: .....
-  const [mode, setMode] = useState("work"); // mode values: 'work', 'rest', 'focus', 'input'
-
+  // const [mode, setMode] = useState("work"); // mode values: 'work', 'rest', 'focus', 'input'
+  const mode = 'work';
 
   useEffect(() => {
     if (isRunning) {
@@ -52,7 +52,7 @@ function Timer(props) {
     return <>
       <div id="timer-container" className={isRunning ? "circle running" : "circle not-running"} >
 
-        <a id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
+        <div id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
 
           <button onClick={() => setMinutes(45)} id="set-hour"></button>
           <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
@@ -66,7 +66,7 @@ function Timer(props) {
           </div>
           {/* {!isRunning ? <Input className="timerPosition" setMinutes={setMinutes} /> : ""} */}
           <Input className="timerPosition" setMinutes={setMinutes} />
-        </a>
+        </div>
       </div>
 
     </>
