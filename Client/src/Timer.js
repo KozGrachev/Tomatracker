@@ -57,11 +57,11 @@ function Timer(props) {
           <button onClick={() => setMinutes(45)} id="set-hour"></button>
           <button onClick={() => setMinutes(25)} id="set-half-hour"></button>
           <div id="time-display">
-            <div id="ten-mins">{timeArr[0]}</div>
-            <div id="single-mins">{timeArr[1]}</div>
-            <div id="colon">:</div>
-            <div id="ten-secs">{timeArr[2]}</div>
-            <div id="single-secs">{timeArr[3]}</div>
+            <div className="time-display-cell" id="ten-mins">{timeArr[0]}</div>
+            <div className="time-display-cell" id="single-mins">{timeArr[1]}</div>
+            <div className="time-display-cell" id="colon">:</div>
+            <div className="time-display-cell" id="ten-secs">{timeArr[2]}</div>
+            <div className="time-display-cell" id="single-secs">{timeArr[3]}</div>
             {/* {time(seconds)} */}
           </div>
           {/* {!isRunning ? <Input className="timerPosition" setMinutes={setMinutes} /> : ""} */}

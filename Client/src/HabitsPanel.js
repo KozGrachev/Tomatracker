@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const LOCAL_STORAGE_KEY = "tomatrackerApp.habits";
 
-export default function HabitHandler() {
+export default function HabitsPanel() {
   const [habits, setHabits] = useState([]); //[{id: 1, name:'habit1', complete: false}]
   const habitNameRef = useRef(); //
 

@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const LOCAL_STORAGE_KEY = 'tomatrackerApp.tasks'
 
-export default function TaskHandler() {
+export default function TasksPanel() {
 
   const [todos, setTodos] = useState([]) //[{id: 1, name:'todo1', complete: false}]
   const todoNameRef = useRef() //

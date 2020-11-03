@@ -6,12 +6,16 @@ input {
   @include nm-shape--convex;
   border-radius: $btn-size;
 
+  &.input-textbox-lists {
 
-  &:hover{
+    height: $btn-size;
+  }
+
+  &:hover {
     @include nm-shape--convex-raised;
   }
 
-  &:focus{
+  &:focus {
     @include nm-shape--concave;
   }
 
