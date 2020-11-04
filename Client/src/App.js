@@ -20,7 +20,7 @@ function App() {
 
       <div className="lists-container">
 
-        <div className="">
+        <div className="scroll-section">
           <List className="tasks" tasks={tasks} />
         </div>
 
