@@ -21,8 +21,6 @@ function Timer(props) {
       }
       return () => window.clearTimeout(id); //cleanup function:....
     }
-
-    console.log("Re-rendering...")
   }, [seconds, isRunning]); // Dependency array - rerender this entire function in order to change the value of seconds. But we don't want to do this because
   // Uses shallow equality - so if the value is the same, it will not rerender, even if the object is different.
 
@@ -41,15 +39,13 @@ function Timer(props) {
   const timeArr = time(seconds);
 
   const restTime = time(seconds / 6);
-  console.log("Rest time: " + restTime);
-
   function setMinutes(minutes) {
     setSeconds(minutes * 60);
   }
 
   function display(mode) {
 
-    return <>
+    return (
       <div id="timer-container" className={isRunning ? "circle running" : "circle not-running"} >
 
         <div id="dial-panel" className="timer timerDimensions timerPosition circle" onClick={() => setIsRunning(!isRunning)}>
@@ -68,8 +64,7 @@ function Timer(props) {
           <Input className="timerPosition" setMinutes={setMinutes} />
         </div>
       </div>
-
-    </>
+    );
   }
 
   function selectMode() {

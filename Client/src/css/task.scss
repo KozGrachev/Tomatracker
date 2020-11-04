@@ -1,0 +1,46 @@
+@import 'variables.scss';
+@import 'nm-style.scss';
+$task-height: 50px;
+$task-spacing: 50px;
+
+.task {
+  display: flex;
+  align-items: center;
+  margin: $task-spacing;
+  // border: 3px solid $text-color;
+  border-radius: 0 $task-height $task-height 0;
+  border-left: none;
+  height: $task-height;
+
+}
+
+.radio {
+  @include nm-shape--concave;
+  margin-left: -$task-height/2;
+  width: $task-height*0.5;
+  height: $task-height*0.5;
+  // border: 3px solid $text-color;
+  border-radius: $task-height;
+
+  &:hover {
+    @include nm-shape--convex-raised;
+    margin-left: -$task-height/2;
+  }
+
+  &:selected {
+    
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-left: $task-spacing*0.4;
+}
+
+.title {
+  font-size: $task-height*0.45;
+  font-weight: 600;
+}
+
+.note {}

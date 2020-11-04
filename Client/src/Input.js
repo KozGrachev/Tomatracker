@@ -8,7 +8,6 @@ const Input = (props) => {
         // userInput = event.target.value;
         setUserInput(event.target.value)
     }
-    console.log('userInput: ', userInput)
     return (
 
         <div id="time-input">

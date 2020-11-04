@@ -1,6 +1,8 @@
 @import 'nm-style.scss';
 @import 'buttons.scss';
 @import 'timer.scss';
+@import 'list.scss';
+@import 'task.scss';
 @import 'variables.scss';
 @import 'input.scss';
 
@@ -20,6 +22,7 @@ button {
 }
 
 body {
+  overflow: hidden;
   height: 100vh;
   /* Dark Mode  */
   background-color: $bg-color;
@@ -35,10 +38,8 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50vh 50vh;
-  grid-template-areas:
-    "timer tasks"
-    "timer habits";
+  // grid-template-rows: 50vh 50vh;
+  grid-template-areas: "timer lists";
 }
 
 $breakpoint-tablet: 1000px;
@@ -51,23 +52,40 @@ $breakpoint-tablet: 1000px;
     grid-template-areas: "timer tasks";
 
   }
-
-  .flex-container-timer {}
-
-  .flex-container-lists {
-    border: 5px solid green;
-  }
 }
 
-.habit-container {
-  grid-area: habits;
-}
-
-.task-container {
-  grid-area: tasks;
-}
-
-.flex-container-timer {
+.timer-container {
   grid-area: timer;
   position: relative;
+  align-self: center;
+
+}
+
+.lists-container {
+  grid-area: lists;
+  // display:flex;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "tasks habits";
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  background: $bg-color-light;
+  border-radius: 50px 0 0 50px;
+}
+
+.tasks{
+  position:fixed;
+}
+
+.scroll-section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: end;
 }
