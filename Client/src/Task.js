@@ -5,8 +5,8 @@ export default function Task(props) {
     <div className={`task ${props.data.completed ? "completed" : "notCompleted"}`}>
       <div className="radio"></div>
       <div className="content" >
-        <p className="title">{props.data.content}</p>
-        <p className="note">Write a note here</p>
+        <p className="title">{props.data.title}</p>
+        <p className="note">{props.data.note}</p>
       </div>
 
     </div>

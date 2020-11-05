@@ -15,8 +15,7 @@ exports.createTask = async (req, res) => {
   console.log(req.body);
   try {
     const newTask = await Tasks.create(req.body);
-    res.sendStatus(201);
-    res.send(newTask);
+    res.status(201).send(newTask);
   } catch (error) {
     console.error("Error posting to DB: ", error);
     res.sendStatus(500);
@@ -41,10 +40,9 @@ exports.deleteTask = async (req, res) => {
 exports.updateTask = async (req, res) => {
   const task = await Tasks.findById(req.params.id, err => console.error(err));
 
-  if (req.params.property === 'priority') {
-    task.priority = req.params.value;
-    await task.save((err, tsk, rows) => {
-      console.log(`error: ${err}, tsk:${tsk}, rows:${rows}`);
+  if (req.query.priority) {
+    task.priority = req.query.priority;
+    await task.save((err, tsk) => {
       if (err) res.send(err.message);
       else res.send(tsk);
     });

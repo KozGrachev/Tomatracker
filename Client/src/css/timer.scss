@@ -74,6 +74,14 @@ svg circle{
 
 
     background-color: rgba(255, 255, 255, 0.226);
+
+    &.running{
+      background-color: rgba(37, 37, 37, 0.116);
+    }
+
+    &.not-running{
+      background-color: rgba(68, 68, 68, 0.116);
+    }
   }
 }
 

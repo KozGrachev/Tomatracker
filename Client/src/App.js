@@ -1,49 +1,27 @@
-import React from "react";
-import Timer from "./Timer";
-// import TasksPanel from "./TasksPanel";
-// import HabitsPanel from "./HabitsPanel";
-// import Input from "./Input"
-import { getTasks } from "./ApiService";
-import { useEffect, useState } from "react";
+import React from 'react';
+import Timer from './Timer';
+// import TasksPanel from './TasksPanel';
+// import HabitsPanel from './HabitsPanel';
+// import Input from './Input'
+import { useEffect, useState } from 'react';
 import './css/app.scss';
-import { ListPanel } from "./ListPanel/ListPanel";
+import { ListPanel } from './ListPanel/ListPanel';
+const api = require('./ApiService');
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [habits, setHabits] = useState([]);
 
-  useEffect(() => {
-    getTasks().then(res => setTasks(res));
-  }, []);
+  useEffect(() => { api.getTasks().then(res => setTasks(res)) }, []);
+  useEffect(() => { api.getHabits().then(res => setHabits(res)) }, []);
 
-  function handleAddItem(item) {
-    if (item.type === 'task') {
-      const newTask = {
+  function handleAddItem(newItem) {
+    // if (newItem.itemType === 'tasks') {
+    api.addItem(newItem).then(() => {
+      // console.log(createdItem);
+      newItem.itemType === 'tasks' ? setTasks(tasks => [...tasks, newItem]) : setHabits(habits => [...habits, newItem]);
 
-      }
-      setTasks(tasks => [...tasks, newTask])
-    }
-  }
-
-  function toggleHabit(id) {
-    const newHabits = [...habits];
-    /*Find the id*/
-    const habit = newHabits.find((habit) => habit.id === id);
-    /*toggle that habit to it's opposite*/
-    habit.complete = !habit.complete;
-    setHabits(newHabits);
-  }
-
-  function handleDeleteSelectedHabits() {
-    const newHabits = habits.filter((habit) => !habit.complete);
-    setHabits(newHabits);
-  }
-
-  function handleClearHabits() {
-    const newHabits = habits.map((habit) => {
-      habit.complete = false;
-      return habit;
-    });
-    setHabits(newHabits);
+    })
   }
 
   return (
@@ -52,11 +30,11 @@ function App() {
       <div className="lists-container">
 
         <div className="scroll-section">
-          <ListPanel data={tasks} type="tasks" className="tasks" />
+          <ListPanel data={tasks} handleAddItem={handleAddItem} type="tasks" className="tasks" />
         </div>
 
         <div className="scroll-section">
-          <ListPanel data={tasks} type="tasks" className="tasks" />
+          <ListPanel data={habits} handleAddItem={handleAddItem} type="habits" className="tasks" />
         </div>
       </div>
 

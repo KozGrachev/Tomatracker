@@ -1,7 +1,7 @@
 // $foc-bg-color:rgb(85, 85, 85);
 // $act-bg-color: rgb(43, 43, 43);
 $size-ratio: 6.5vmin;
-$btn-size: $size-ratio;
+$btn-size: $size-ratio*0.8;
 $btn-bord-rad: 21%;
 $input-bord-rad: $btn-size * 0.5;
 
@@ -40,4 +40,4 @@ $time-disp-txt-size: $timer-size * 0.2;
 $timer-btn-size: $timer-size * 0.2;
 
 $task-height: 50px;
-$task-spacing: 50px;
+$task-spacing: 30px;

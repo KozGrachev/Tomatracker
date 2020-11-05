@@ -7,7 +7,6 @@ function List(props) {
   function renderList() {
     return (
       props.data.map(item => {
-        console.log(item.content);
         return <Task data={item} key={item._id} />
       })
     )

@@ -12,4 +12,20 @@ export function getTasks() {
   return fetchRequest('/tasks');
 }
 
+export function getHabits() {
+  return fetchRequest('/habits');
+}
+
+export function addItem(newItem) {
+
+  console.log('Inside ApiService: ',newItem);
+
+  return fetchRequest('/'+ newItem.itemType, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(newItem),
+  })
+}
 
