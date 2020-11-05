@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import List from '../List/List';
+import List from './List';
 
 export function ListPanel(props) {
   const [title, setTitle] = useState('');
-  // const [itemType, setItemType] = useState();
+  const [selectedItems, setSelectedItems] = useState([]);
 
 
   function handleAddItem() {

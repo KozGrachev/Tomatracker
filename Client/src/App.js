@@ -5,7 +5,7 @@ import Timer from './Timer';
 // import Input from './Input'
 import { useEffect, useState } from 'react';
 import './css/app.scss';
-import { ListPanel } from './ListPanel/ListPanel';
+import { ListPanel } from './ListPanel';
 const api = require('./ApiService');
 
 function App() {
@@ -16,19 +16,22 @@ function App() {
   useEffect(() => { api.getHabits().then(res => setHabits(res)) }, []);
 
   function handleAddItem(newItem) {
-    // if (newItem.itemType === 'tasks') {
     api.addItem(newItem).then(() => {
-      // console.log(createdItem);
-      newItem.itemType === 'tasks' ? setTasks(tasks => [...tasks, newItem]) : setHabits(habits => [...habits, newItem]);
-
+      newItem.itemType === 'tasks' ?
+        setTasks(tasks => [...tasks, newItem]) :
+        setHabits(habits => [...habits, newItem]);
     })
+  }
+
+  // write handleSelect function that is called when an item is selected
+  // - marks that item as selected by addin it to the selectedItems array
+  function handleSelectItem(event) {
+    
   }
 
   return (
     <div className="flex-body-wrapper">
-
       <div className="lists-container">
-
         <div className="scroll-section">
           <ListPanel data={tasks} handleAddItem={handleAddItem} type="tasks" className="tasks" />
         </div>

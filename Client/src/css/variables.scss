@@ -22,6 +22,7 @@ $bg-color-dark: rgb(39, 35, 34);
 /* Light Mode */
 $bg-color-light: rgb(207, 200, 198);
 $bg-color: $bg-color-dark;
+$bg-gradient-dark: linear-gradient(-130deg, $bg-color, darken($bg-color, 5%));
 // $timer-bg: lighten($list-bg, 28%);
 
 
