@@ -1,22 +1,26 @@
 @import 'variables.scss';
 @import 'nm-style.scss';
-$task-height: 50px;
-$task-spacing: 50px;
 
 .task {
   display: flex;
   align-items: center;
-  margin: $task-spacing;
+  margin: $task-spacing 0;
+  padding-bottom: $task-spacing;
+  // margin-bottom: 100px;
   // border: 3px solid $text-color;
-  border-radius: 0 $task-height $task-height 0;
-  border-left: none;
+  border-bottom: 1px solid $text-color;
+  // border-radius: 0 $task-height $task-height 0;
   height: $task-height;
 
+  &.completed{
+    text-decoration: line-through;
+  }
 }
 
 .radio {
   @include nm-shape--concave;
-  margin-left: -$task-height/2;
+  // margin-left: -$task-height/2;
+  margin: $task-height*0.4;
   width: $task-height*0.5;
   height: $task-height*0.5;
   // border: 3px solid $text-color;
@@ -24,18 +28,18 @@ $task-spacing: 50px;
 
   &:hover {
     @include nm-shape--convex-raised;
-    margin-left: -$task-height/2;
+    margin: $task-height*0.4;
+
+    // margin-left: -$task-height/2;
   }
 
-  &:selected {
-    
-  }
+  &:selected {}
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding-left: $task-spacing*0.4;
+  // padding-left: $task-spacing*0.4;
 }
 
 .title {

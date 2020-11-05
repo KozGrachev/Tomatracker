@@ -6,15 +6,11 @@ function List(props) {
 
   function renderList() {
     return (
-      props.tasks.map(task => {
-        console.log(task.content);
-        return <Task data={task} key={task._id} />
+      props.data.map(item => {
+        console.log(item.content);
+        return <Task data={item} key={item._id} />
       })
     )
-  }
-
-  function renderControls() {
-
   }
 
   return (
