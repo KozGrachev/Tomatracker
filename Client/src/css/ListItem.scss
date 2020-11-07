@@ -12,7 +12,7 @@
   // border-radius: 0 $task-height $task-height 0;
   height: $task-height;
 
-  &.completed{
+  &.completed {
     text-decoration: line-through;
   }
 }
@@ -33,7 +33,11 @@
     // margin-left: -$task-height/2;
   }
 
-  &:selected {}
+  &.selected {
+    @include nm-shape--concave;
+    background: $btn-active-bg;
+    margin: $task-height*0.4;
+  }
 }
 
 .content {

@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function Task(props) {
+export default function ListItem(props) {
   const [selected, setSelected] = useState(false);
 
-  function handleSelected(event) {
+  useEffect(() => {
+    console.log(props.itemData);
+  }, []);
 
+  function handleSelected(event) {
+    setSelected(!selected);
+    // props.addToSelected(props.itemData._id);
   }
 
   return (
