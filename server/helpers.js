@@ -9,4 +9,4 @@ exports.frameToDays= (frame) => {
     default:
       return new Error("Invalid time frame! Enter 'daily', 'weekly' or 'monthly'");
   }
-}
+} 
